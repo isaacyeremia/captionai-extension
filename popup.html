@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CaptionAI</title>
+</head>
+<body style="width:320px;padding:20px;font-family:Arial,sans-serif;background:#0d1117;color:#ffffff;margin:0;">
+
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="36" height="36" rx="7" fill="#1a73e8"/>
+      <rect x="7" y="12" width="22" height="3" rx="1.5" fill="white"/>
+      <rect x="7" y="18" width="22" height="3" rx="1.5" fill="white"/>
+      <rect x="7" y="24" width="14" height="3" rx="1.5" fill="white" opacity="0.7"/>
+    </svg>
+    <div>
+      <div style="font-size:16px;font-weight:bold;color:#ffffff;">CaptionAI</div>
+      <div style="font-size:11px;color:#8b949e;">Real-time closed captioning</div>
+    </div>
+  </div>
+
+  <!-- Status -->
+  <div style="background:#161b22;border-radius:8px;padding:12px;margin-bottom:16px;border:1px solid #30363d;">
+    <div style="font-size:11px;color:#8b949e;margin-bottom:4px;">STATUS</div>
+    <div id="status" style="font-size:14px;color:#8b949e;display:flex;align-items:center;gap:6px;">
+      <span id="statusDot" style="width:8px;height:8px;border-radius:50%;background:#8b949e;display:inline-block;"></span>
+      <span id="statusText">Tidak aktif</span>
+    </div>
+  </div>
+
+  <!-- Tombol -->
+  <button id="btnStart" style="width:100%;padding:12px;border:none;border-radius:8px;font-size:14px;font-weight:bold;cursor:pointer;margin-bottom:8px;background:#1a73e8;color:white;">
+    ▶ Mulai Caption
+  </button>
+  <button id="btnStop" style="width:100%;padding:12px;border:none;border-radius:8px;font-size:14px;font-weight:bold;cursor:pointer;background:#21262d;color:#8b949e;border:1px solid #30363d;margin-bottom:16px;">
+    ⏹ Stop Caption
+  </button>
+
+  <!-- Settings -->
+  <div style="background:#161b22;border-radius:8px;padding:12px;border:1px solid #30363d;">
+    <div style="font-size:11px;color:#8b949e;margin-bottom:10px;">PENGATURAN CAPTION</div>
+
+    <!-- Ukuran teks -->
+    <div style="margin-bottom:12px;">
+      <div style="font-size:12px;color:#c9d1d9;margin-bottom:6px;">Ukuran teks: <span id="fontSizeVal">20</span>px</div>
+      <input type="range" id="fontSize" min="14" max="36" value="20"
+        style="width:100%;accent-color:#1a73e8;">
+    </div>
+
+    <!-- Warna kotak -->
+    <div style="margin-bottom:12px;">
+      <div style="font-size:12px;color:#c9d1d9;margin-bottom:6px;">Warna kotak</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="color-btn" data-bg="rgba(0,0,0,0.5)" data-label="Hitam"
+          style="padding:6px 12px;border-radius:6px;border:2px solid #1a73e8;background:rgba(0,0,0,0.8);color:white;font-size:11px;cursor:pointer;">Hitam</button>
+        <button class="color-btn" data-bg="rgba(0,0,128,0.7)" data-label="Biru"
+          style="padding:6px 12px;border-radius:6px;border:1px solid #30363d;background:rgba(0,0,128,0.8);color:white;font-size:11px;cursor:pointer;">Biru</button>
+        <button class="color-btn" data-bg="rgba(0,100,0,0.7)" data-label="Hijau"
+          style="padding:6px 12px;border-radius:6px;border:1px solid #30363d;background:rgba(0,100,0,0.8);color:white;font-size:11px;cursor:pointer;">Hijau</button>
+        <button class="color-btn" data-bg="rgba(100,0,0,0.7)" data-label="Merah"
+          style="padding:6px 12px;border-radius:6px;border:1px solid #30363d;background:rgba(100,0,0,0.8);color:white;font-size:11px;cursor:pointer;">Merah</button>
+      </div>
+    </div>
+
+    <!-- Warna teks -->
+    <div>
+      <div style="font-size:12px;color:#c9d1d9;margin-bottom:6px;">Warna teks</div>
+      <div style="display:flex;gap:8px;">
+        <button class="text-btn" data-color="#ffffff"
+          style="padding:6px 12px;border-radius:6px;border:2px solid #1a73e8;background:#333;color:#ffffff;font-size:11px;cursor:pointer;">Putih</button>
+        <button class="text-btn" data-color="#ffff00"
+          style="padding:6px 12px;border-radius:6px;border:1px solid #30363d;background:#333;color:#ffff00;font-size:11px;cursor:pointer;">Kuning</button>
+        <button class="text-btn" data-color="#00ff00"
+          style="padding:6px 12px;border-radius:6px;border:1px solid #30363d;background:#333;color:#00ff00;font-size:11px;cursor:pointer;">Hijau</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;font-size:10px;color:#484f58;text-align:center;">
+    CaptionAI — Universitas Katolik Darma Cendika
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
