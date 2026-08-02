@@ -10,8 +10,8 @@
   "host_permissions": [
     "http://localhost:8000/*",
     "ws://localhost:8000/*",
-    "https://isaacyn-captionai-server.hf.space/*",
-    "wss://isaacyn-captionai-server.hf.space/*"
+    "https://isaacyn-captionai-server-v2.hf.space/*",
+    "wss://isaacyn-captionai-server-v2.hf.space/*"
   ],
   "background": {
     "service_worker": "background.js"
